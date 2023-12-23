@@ -1,22 +1,42 @@
+Reference:
 
-To list all the dbs available
+https://www.mongodb.com/docs/manual/tutorial/
+
+
+
+# To list all the dbs available
 
 $ show dbs
 
 
-To use a db
+
+# To use a db [mongodb will create a new one if not exists]
 
 $ use <db_name>
 
 
-To list all the collections with a db
+
+# To list all the collections with a db
 
 $ db.getCollectionNames()
 
 
 
-To find all the documents within a collections
+# To find all the documents within a collections
 
 $ db.<collection_name>.find()
 
+
+
+# To insert one document into the collection
+$ db.<collection_name>.insertOne(<json>)
+
+# ex : 
+$ db.<collection_name>.insertOne({id:"1", name: "<name>"})
+
+
+
+# To drop database
+
+$ db.runCommand({"dropDatabase": 1})
 

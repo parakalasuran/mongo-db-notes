@@ -1,0 +1,20 @@
+
+
+/*
+    More on find()
+
+    
+
+ */
+
+
+# project only a few fields - prints only name & type
+
+$ db.beers.find({},{_id:0, name:1, type:1})
+
+
+
+# with filter 
+
+$ db.beers.find({abv:{$gt:5}},{_id:0, name:1, type:1})
+

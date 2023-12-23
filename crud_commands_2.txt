@@ -1,0 +1,98 @@
+Reference : 
+
+https://www.mongodb.com/docs/manual/tutorial/insert-documents/
+
+
+# crud - create / read / update / delete
+
+
+# ------
+# create
+# ------
+
+# insert one record
+
+$ db.inventory.insertOne(
+   { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
+  )
+
+$ db.beers.insertOne(
+    {_id: 4, name: "Cold Mountain", type: "Ale", state: "NC", abv: 5.9}
+  );
+
+
+# insert many records
+
+$ db.inventory.insertMany([
+   { item: "journal", qty: 25, tags: ["blank", "red"], size: { h: 14, w: 21, uom: "cm" } },
+   { item: "mat", qty: 85, tags: ["gray"], size: { h: 27.9, w: 35.5, uom: "cm" } },
+   { item: "mousepad", qty: 25, tags: ["gel", "blue"], size: { h: 19, w: 22.85, uom: "cm" } }
+  ])
+
+
+
+# ------
+# Update 
+# ------
+
+# Update one document
+
+$ db.beers.updateOne({name:'Common Ties'}, { $set: {state:'NC'} })
+
+
+
+# Update many documents
+
+$ db.beers.updateMany({type:'IPA'}, {$set:{toDelete:true}})
+
+
+# Update many when value is null
+
+$ db.beers.updateMany({toDelete:null}, {$set:{toDelete:false}})
+
+
+# ------
+# Read
+# ------
+
+# all records 
+
+$ db.inventory.find()
+
+
+# to filter
+
+$ db.inventory.find({item:"mousepad"})
+
+
+# use gt operator
+
+$ db.beers.find({abv:{$gt:7}})
+
+
+
+# to get docs as array 
+
+$ db.beers.find().toArray()
+
+
+
+# iterate the cursor 
+
+$ db.beers.find().forEach( (data) => {printjson(data)} )
+
+
+
+# ------
+# Delete 
+# ------
+
+# delete one record
+
+$ db.beers.deleteOne({toDelete:true})
+
+
+# delete many records
+
+$ db.beers.deleteMany({toDelete:true})
+
