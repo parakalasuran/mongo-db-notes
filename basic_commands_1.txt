@@ -1,0 +1,22 @@
+
+To list all the dbs available
+
+$ show dbs
+
+
+To use a db
+
+$ use <db_name>
+
+
+To list all the collections with a db
+
+$ db.getCollectionNames()
+
+
+
+To find all the documents within a collections
+
+$ db.<collection_name>.find()
+
+
