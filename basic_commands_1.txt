@@ -36,7 +36,24 @@ $ db.<collection_name>.insertOne({id:"1", name: "<name>"})
 
 
 
+# To drop collection 
+
+$ db.myCollection.drop()
+
+
+
 # To drop database
 
 $ db.runCommand({"dropDatabase": 1})
+
+or 
+
+$ db.dropDatabase()
+
+
+
+# To get stats of the collection / avg obj size / no of objects etc...
+ 
+$ db.stats()
+
 

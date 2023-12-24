@@ -51,6 +51,20 @@ $ db.beers.updateMany({type:'IPA'}, {$set:{toDelete:true}})
 $ db.beers.updateMany({toDelete:null}, {$set:{toDelete:false}})
 
 
+# embed document within document
+db.beers.updateMany({}, {$set:{character:{color:'Yellow',taste:'bitter',ingredient:['malt','hop']}}})
+
+# embed with filter
+db.beers.updateMany({type:'Ale'}, {$set:{character:{color:'light brown',taste:'sweet',ingredient:['malt','chocalate']}}})
+
+
+# update embedded doc attributes based on condition
+
+db.beers.updateMany( {'character.ingredient':'barley'}, {$set:{'character.taste':'bitter'}} )
+
+
+
+
 # ------
 # Read
 # ------
@@ -80,6 +94,23 @@ $ db.beers.find().toArray()
 # iterate the cursor 
 
 $ db.beers.find().forEach( (data) => {printjson(data)} )
+
+
+
+# find by matching the value in array - 
+
+$ db.beers.find({state:'PA'})
+
+
+
+# to find by matching elements in embedded docs - 
+
+$ db.beers.find(  {'character.color' : 'orange' } )
+
+
+
+
+
 
 
 

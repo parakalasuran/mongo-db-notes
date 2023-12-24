@@ -18,3 +18,10 @@ $ db.beers.find({},{_id:0, name:1, type:1})
 
 $ db.beers.find({abv:{$gt:5}},{_id:0, name:1, type:1})
 
+
+
+# filter embedded doc/elements and project 
+
+$ db.beers.find(  {'character.ingredient' : 'barley' } , {_id:0, name:1, abv:1})
+
+
