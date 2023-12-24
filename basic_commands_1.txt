@@ -1,0 +1,64 @@
+Reference:
+
+https://www.mongodb.com/docs/manual/tutorial/
+
+
+
+# To list all the dbs available
+
+$ show dbs
+
+
+
+# To use a db [mongodb will create a new one if not exists]
+
+$ use <db_name>
+
+
+
+# To list all the collections with a db
+
+$ db.getCollectionNames()
+
+
+
+# To find all the documents within a collections
+
+$ db.<collection_name>.find()
+
+
+# To find one document within a collections. This returns document not cursor like find(). 
+
+$ db.<collection_name>.findOne()
+
+
+
+# To insert one document into the collection
+$ db.<collection_name>.insertOne(<json>)
+
+# ex : 
+$ db.<collection_name>.insertOne({id:"1", name: "<name>"})
+
+
+
+# To drop collection 
+
+$ db.myCollection.drop()
+
+
+
+# To drop database
+
+$ db.runCommand({"dropDatabase": 1})
+
+or 
+
+$ db.dropDatabase()
+
+
+
+# To get stats of the collection / avg obj size / no of objects etc...
+ 
+$ db.stats()
+
+

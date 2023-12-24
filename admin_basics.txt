@@ -1,0 +1,16 @@
+# Path setting to start mongo interactive shell in cmd prompt 
+export MONGO_DB_HOME='/C:/<dir>/mongodb/mongodb-win-7'
+export PATH=$MONGO_DB_HOME/bin:$PATH
+
+
+# Path setting to start mongo interactive shell in cmd prompt 
+export MONGO_SH_HOME='/C:/<dir>/mongosh/mongosh-2.0.2-win32-x64'
+export PATH=$MONGO_SH_HOME/bin:$PATH
+
+
+# To start mongo db server with the path to the db directory in git bash utility
+alias mongodb_start='mongod --dbpath /c:/<dir>'
+
+# Command to start the shell 
+$ mongosh
+

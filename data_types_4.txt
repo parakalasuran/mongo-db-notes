@@ -1,0 +1,17 @@
+
+Reference : 
+
+https://docs.mongodb.com/manual/reference/bson-types/
+
+https://www.mongodb.com/docs/manual/reference/bson-types/#timestamps
+
+Nodejs API - 
+
+https://mongodb.github.io/node-mongodb-native/3.6/api/Timestamp.html
+
+
+
+
+# To insert Date and Timestamp
+
+$ db.items.insertOne({name:'apply', isFruit:true, qty:51, storeId:9828282112, vendor:{name:'fresh4all', location:'NJ'}, tags:['gala','red'], purchaseDate: new Date(), purchaseTime: new Timestamp() })
