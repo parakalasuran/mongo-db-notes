@@ -69,9 +69,15 @@ db.beers.updateMany( {'character.ingredient':'barley'}, {$set:{'character.taste'
 # Read
 # ------
 
-# all records 
+# cursor to all documents  
 
 $ db.inventory.find()
+
+
+# Find one document within a collections. This returns document not cursor like find(). 
+
+$ db.<collection_name>.findOne()
+
 
 
 # to filter

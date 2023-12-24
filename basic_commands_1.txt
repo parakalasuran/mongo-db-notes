@@ -27,6 +27,11 @@ $ db.getCollectionNames()
 $ db.<collection_name>.find()
 
 
+# To find one document within a collections. This returns document not cursor like find(). 
+
+$ db.<collection_name>.findOne()
+
+
 
 # To insert one document into the collection
 $ db.<collection_name>.insertOne(<json>)
