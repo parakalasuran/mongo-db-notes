@@ -11,6 +11,30 @@ export PATH=$MONGO_SH_HOME/bin:$PATH
 # To start mongo db server with the path to the db directory in git bash utility
 alias mongodb_start='mongod --dbpath /c:/<dir>'
 
+
+mongod --dbpath '<>' -> Where data is stored
+
+       --logpath '<>' -> where log is stored
+
+       --directoryperdb -> seperate directory for each db
+
+       --config '<>' -> to use a config file 
+
+
+# To get list of commands and usage 
+
+mongod --help 
+
+
 # Command to start the shell 
 $ mongosh
+
+
+
+# help in mongo shell
+
+$ mongosh --help
+
+
+
 
