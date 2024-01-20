@@ -12,6 +12,27 @@ Reference: https://www.mongodb.com/docs/manual/tutorial/
     $ use <db_name>
 
 
+# disconnect the db connection from shell
+
+    $ db.shutdownServer()
+
+# list of allowed commands 
+
+    $ db.help()
+
+    or
+
+    $ db.<db_name>.help()
+
+
+# to get details about the command
+
+    $ db.<db_name>.<command>.help()
+
+    ex:
+    $ db.test.insertOne.help()
+
+
 # To list all the collections with a db
 
     $ db.getCollectionNames()
